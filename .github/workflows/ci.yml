@@ -22,12 +22,14 @@ jobs:
 
       - name: 📝 Create .env file
         run: |
+          echo "PORT=${{ secrets.PORT }}" >> .env
           echo "MONGODB_URL=${{ secrets.MONGODB_URL }}" >> .env
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
           echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
           echo "SERVICE_ID=${{ secrets.SERVICE_ID }}" >> .env
           echo "ACCOUNT_SID=${{ secrets.ACCOUNT_SID }}" >> .env
           echo "AUTH_TOKEN=${{ secrets.AUTH_TOKEN }}" >> .env
+          echo "TOKEN=${{ secrets.TOKEN }}" >> .env
 
       - name: 🚀 Start Server
         run: npm start
