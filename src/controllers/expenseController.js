@@ -4,7 +4,6 @@ exports.getExpenses = async (req, res) => {
   try {
     //isDefault=true or userid = which is specified
     const expenses = await Expense.find({
-      $or: [{ isDefault: true }, { userid: req.user._id }],
     });
 
     res.status(200).json(expenses);
