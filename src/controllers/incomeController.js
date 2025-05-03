@@ -4,7 +4,7 @@ exports.getIncomes = async (req, res) => {
   try {
     //isDefault=true or userid = which is specified
     const incomes = await Income.find({
-      $or: [{ isDefault: true }, { userid: req.user._id }],
+     
     });
 
     res.status(200).json(incomes);
